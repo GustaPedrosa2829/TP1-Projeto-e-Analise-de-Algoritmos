@@ -1,6 +1,6 @@
 
-#ifndef MST_H
-#define MST_H
+#ifndef MAGICOS_H
+#define MAGICOS_H
 
 typedef struct {
     int a;
