@@ -16,6 +16,7 @@ typedef struct {
 } DadosEntrada;
 
 void lerEntrada(const char *nomeArquivo, DadosEntrada *dados);
+void dijkstra(int n, int inicio, int *distancias, int *visitado, int *result, int **grafo);
 void processarRotas(DadosEntrada *dados, int *resultado);
 void escreverSaida(const char *nomeArquivo, int *resultado);
 
