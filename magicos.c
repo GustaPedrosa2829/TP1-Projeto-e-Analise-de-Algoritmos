@@ -5,19 +5,19 @@
 void lerEntrada(const char *nomeArquivo, DadosEntrada *dados) {
     FILE *arquivo = fopen(nomeArquivo, "r");
     if (!arquivo) {
-        fprintf(stderr, "Erro ao abrir o arquivo de entrada.\n");
+        printf(stderr, "Erro ao abrir o arquivo de entrada.\n");
         exit(EXIT_FAILURE);
     }
 
-    fscanf(arquivo, "%d %d %d", &dados->n, &dados->m, &dados->k);
+    scanf(arquivo, "%d %d %d", &dados->n, &dados->m, &dados->k);
 
     dados->voos = malloc(dados->m * sizeof(Voo));
 
     for (int i = 0; i < dados->m; i++) {
-        fscanf(arquivo, "%d %d %d", &dados->voos[i].a, &dados->voos[i].b, &dados->voos[i].c);
+        scanf(arquivo, "%d %d %d", &dados->voos[i].a, &dados->voos[i].b, &dados->voos[i].c);
     }
 
-    fclose(arquivo);
+    close(arquivo);
 }
 
 void dijkstra(int n, int inicio, int *distancias, int *visitado, int *result, int **grafo) {
@@ -84,13 +84,13 @@ void processarRotas(DadosEntrada *dados, int *result) {
 void escreverSaida(const char *nomeArquivo, int *resultado) {
     FILE *arquivo = fopen(nomeArquivo, "w");
     if (!arquivo) {
-        fprintf(stderr, "Erro ao abrir o arquivo de saída.\n");
+        printf(stderr, "Erro ao abrir o arquivo de saída.\n");
         exit(EXIT_FAILURE);
     }
 
     for (int i = 0; i < dados->k; i++) {
-        fprintf(arquivo, "%d ", resultado[i]);
+        printf(arquivo, "%d ", resultado[i]);
     }
 
-    fclose(arquivo);
+    close(arquivo);
 }
