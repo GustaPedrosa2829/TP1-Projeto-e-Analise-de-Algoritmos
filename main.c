@@ -17,13 +17,13 @@ int main(int argc, char *argv[]) {
                 arquivoSaida = optarg;
                 break;
             default:
-                fprintf(stderr, "Uso: %s -i arquivo_entrada -o arquivo_saida\n", argv[0]);
+                printf(stderr, "Uso: %s -i arquivo_entrada -o arquivo_saida\n", argv[0]);
                 exit(EXIT_FAILURE);
         }
     }
 
     if (arquivoEntrada == NULL || arquivoSaida == NULL) {
-        fprintf(stderr, "Ambos os arquivos de entrada e saída são necessários.\n");
+        printf(stderr, "Ambos os arquivos de entrada e saída são necessários.\n");
         exit(EXIT_FAILURE);
     }
 
