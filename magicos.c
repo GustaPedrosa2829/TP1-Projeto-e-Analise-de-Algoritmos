@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "magicos.h"
+#include <limits.h>
 
 void lerEntrada(const char *nomeArquivo, DadosEntrada *dados) {
     FILE *arquivo = fopen(nomeArquivo, "r");
