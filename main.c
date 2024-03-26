@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "magicos.h"
+#include <limits.h>
 
 int main(int argc, char *argv[]) {
     char *arquivoEntrada = NULL;
